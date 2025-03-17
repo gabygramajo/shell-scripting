@@ -10,9 +10,15 @@ TIMESTAMP="Informe generado el $fecha_actual por el usuario $USER"
 
 nmap_exec () {
     #$1 y $2 son argumentos
-    echo "[INFO] Ejecutando nmap en la red $1, por favor espere unos segundos..."
-    sudo nmap -sV $1 > $2
-    echo "[OK] Fichero $2 generado correctamente"
+        
+    if [ $(find $2 -mmin -30) ]; then
+	echo "El archivo ya existe y tiene una antiguedad menor a 30m"
+    else
+	echo "[INFO] Ejecutando nmap en la red $1, por favor espere unos segundos..."
+	sudo nmap -sV $1 > $2
+	echo "[OK] Fichero $2 generado correctamente"
+    fi
+
 }
 
 generar_html () {
@@ -31,7 +37,7 @@ EOF
 }
 
 #Generamos el reporte
-nmap_exec "172.23.16.0/20" "salida_nmap2.raw"
+nmap_exec "172.23.16.0/20" "salida_nmap.raw"
 
 #Generamos el reporte en html
 echo "[INFO] Generando reporte html..."
