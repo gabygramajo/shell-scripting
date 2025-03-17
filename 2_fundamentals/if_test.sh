@@ -10,16 +10,18 @@ else
         echo "Cadena diferenes"
 fi
 
-#Ejemplo 2
-if [ $var1 = "cadenatexto" ]; then
-        echo "Cadenas iguales"
+#Ejemplo 2 -> 10 <= 400
+var_num=10
+if [ $var_num -le 400 ]; then
+        echo "$var_num es menor o igual a 400"
 else
-        echo "Cadena diferenes"
+        echo "$var_num es mayor a 400"
 fi
 
-#Ejemplo 2
-if [ $var1 = "cadenatexto" ]; then
-        echo "Cadenas iguales"
-else
-        echo "Cadena diferenes"
-fi
+#Ejemplo 3
+
+#if [ $var1 = "cadenatexto" ]; then
+#        echo "Cadenas iguales"
+#else
+#        echo "Cadena diferenes"
+#fi
