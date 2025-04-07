@@ -6,9 +6,9 @@
 #done
 
 # ej 2 : shell expantion {a..z}
-#for letter in {a..z}; do
-#	echo "Letter $letter"
-#done
+: 'for letter in {a..z}; do
+	echo "Letter $letter"
+done'
 
 # Ej 3: Listar ficheros utilizando wildcards
 echo "### FICHEROS DE /var/log/ ###"

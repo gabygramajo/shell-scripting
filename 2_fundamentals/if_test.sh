@@ -20,8 +20,8 @@ fi
 
 #Ejemplo 3
 
-#if [ $var1 = "cadenatexto" ]; then
-#        echo "Cadenas iguales"
-#else
-#        echo "Cadena diferenes"
-#fi
+: 'if [ $var1 = "cadenatexto" ]; then
+        echo "Cadenas iguales"
+else
+        echo "Cadena diferenes"
+fi'
